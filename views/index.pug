@@ -1,0 +1,24 @@
+
+doctype html
+html(lang='en')
+  head
+    title= title
+    meta(charset='utf-8')
+    style
+      include ./index.scss
+  body
+    div 
+      h1= title
+    //- div.remark
+    //-   p Pug rocks!
+    div
+      - things = 15
+      mixin thing(n)
+        if n > 0
+          .thing
+            +thing(n - 1)
+      .cycle
+        .things
+          - i = 1
+          while i--
+            +thing(things)
