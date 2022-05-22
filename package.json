@@ -2,11 +2,13 @@
   "name": "challenge-39-spinning",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "apps.js",
+  "homepage": "https://wutchara.github.io/challenge-39-spinnin",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "pug -w ./views/ -o ./html -P",
-    "dev": "nodemon app.js"
+    "build:pug": "pug -w ./views/ -o ./html -P",
+    "dev": "nodemon app.js",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
@@ -15,5 +17,8 @@
     "nodemon": "^2.0.16",
     "pug": "^3.0.2",
     "pug-cli": "^1.0.0-alpha6"
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
